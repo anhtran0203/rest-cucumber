@@ -1,3 +1,4 @@
+@product
 Feature: Add new board
 
   Scenario: Add new a board
