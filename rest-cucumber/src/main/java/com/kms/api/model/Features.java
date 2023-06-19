@@ -1,31 +1,98 @@
+
 package com.kms.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.Map;
+import javax.annotation.processing.Generated;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonRootName(value = "Features")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "Feature"
+})
+@Generated("jsonschema2pojo")
 public class Features {
 
-  @JsonProperty("Feature")
-  private List<String> Feature = new ArrayList<String>();
+    @JsonProperty("Feature")
+    private List<String> feature = new ArrayList<String>();
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-  public List<String> getFeature() {
-    return Feature;
-  }
+    @JsonProperty("Feature")
+    public List<String> getFeature() {
+        return feature;
+    }
 
-  public void setFeature(List<String> Feature) {
-    this.Feature = Feature;
-  }
+    @JsonProperty("Feature")
+    public void setFeature(List<String> feature) {
+        this.feature = feature;
+    }
+
+    public Features withFeature(List<String> feature) {
+        this.feature = feature;
+        return this;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+    public Features withAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Features.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("feature");
+        sb.append('=');
+        sb.append(((this.feature == null)?"<null>":this.feature));
+        sb.append(',');
+        sb.append("additionalProperties");
+        sb.append('=');
+        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(',');
+        if (sb.charAt((sb.length()- 1)) == ',') {
+            sb.setCharAt((sb.length()- 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result = ((result* 31)+((this.feature == null)? 0 :this.feature.hashCode()));
+        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if ((other instanceof Features) == false) {
+            return false;
+        }
+        Features rhs = ((Features) other);
+        return (((this.feature == rhs.feature)||((this.feature!= null)&&this.feature.equals(rhs.feature)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
+    }
+
 }

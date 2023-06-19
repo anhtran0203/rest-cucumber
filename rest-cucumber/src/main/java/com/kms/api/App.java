@@ -8,9 +8,9 @@ import java.io.IOException;
 public class App {
   public static void main(String[] args) throws IOException {
     Utils.convertJsonToJavaClass(
-        new File("src/main/resources/data/laptop-bag.json").toURI().toURL(),
-        new File("src/main/java/com/kms/api"),
+        new File("rest-cucumber/rest-cucumber/src/main/resources/data/list.json").toURI().toURL(),
+        new File("rest-cucumber/rest-cucumber/src/main/java/com/kms/api"),
         "model",
-        "LaptopBag");
+        "board");
   }
 }

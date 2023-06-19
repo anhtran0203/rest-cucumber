@@ -1,9 +1,10 @@
 @product
-Feature: Add new product
+Feature: Add new board
 
-  Scenario: Add new a product
-    Given the path "add" to the endpoint
-    And the payload of the request with BrandName as "Dell", Features as "8GB RAM,1TB Hard Drive", LaptopName as "Latitude"
-    When I perform the request to add new product
+  Scenario: Add new a board
+    Given the path "board/create" to the endpoint
+    And the payload of the request with BoardName as "My board1674"
+    When I perform the request to add new board
     Then the status code "200" should return
-    And the product is added successfully with an integer Id
+    And the board is added successfully with an string id
+

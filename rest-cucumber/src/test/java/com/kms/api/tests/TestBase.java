@@ -13,8 +13,8 @@ public class TestBase {
   public TestBase() {
     prop = PropertyReader.getInstance();
     baseURI = prop.getProperty("baseURI");
-    port = Integer.parseInt(prop.getProperty("port"));
-    basePath = prop.getProperty("basePath");
-    authentication = preemptive().basic(prop.getProperty("username"), prop.getProperty("password"));
+//    port = Integer.parseInt(prop.getProperty("port"));
+//    basePath = prop.getProperty("basePath");
+//    authentication = preemptive().basic(prop.getProperty("username"), prop.getProperty("password"));
   }
 }
