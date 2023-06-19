@@ -78,7 +78,7 @@ public class RestClient extends TestBase {
             .accept(contentType)
             .body(body)
             .when()
-            .post(requestPath)
+            .put(requestPath)
             .then()
             .log()
             .all()
